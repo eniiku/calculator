@@ -4,62 +4,56 @@
     box-sizing: border-box;
   }
   
+  body {
+  display: grid;
+  place-items: center;
+}
+  
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border: 1px solid #000;
   border-radius: 8px;
   padding: .8em;
   display: grid;
   grid-template-columns: 1fr;
+  max-width: 19.5em;
 }
 
 .display {
-  height: 6em;
-  outline: 1px solid #eee;
+  border: 1px solid #eee;
   margin-bottom: .8em;
+  border-radius: 8px;
+  display: grid;
+  place-items: end;
+  padding: .5em;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.top-display {
+  min-height: 1.3rem;
+  font-size: 1.3em;
+}
+
+.main-display {
+  min-height: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .buttons {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: .5em;
 }
 
-.buttons .keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.col-span {
+  grid-column: span 2;
 }
 
-.keypad #clr {
-  background: #cbd5e1;
-}
-
-.buttons .operator {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.buttons .keypad,
-.buttons .operator {
-  gap: .5em;
-}
-
-.operator img {
-  height: 85%;
-}
-
-.operator #equal {
+.row-span {
   grid-row: span 2;
-  background: #334155;
-}
-.operator .btn {
-  background: #cbd5e1;
 }
 
-.btn {
+button {
   background: #f1f1f1;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -67,4 +61,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ddd;
 }
